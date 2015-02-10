@@ -1,0 +1,17 @@
+<script type="text/javascript" src="http://inside.morningshop.tw/js/jquery.min.js"></script>
+<link rel="stylesheet" href="http://chriszarate.github.io/sheetrock/css/sheetrock.css">
+<script src="http://chriszarate.github.io/sheetrock/dist/jquery.sheetrock.min.js"></script>
+
+<table id="statistics" class="table table-condensed table-striped"> </table>
+
+<script>
+
+// Define spreadsheet URL.
+var mySpreadsheet = 'https://docs.google.com/spreadsheet/ccc?key=1oY15kG4Jft_BV0Dequ5FQJ5-tCvC3HDDAtgrJjDPLjE#gid=0';
+ 
+// Load an entire sheet.
+$('#statistics').sheetrock({
+  url: mySpreadsheet
+});
+
+</script>
