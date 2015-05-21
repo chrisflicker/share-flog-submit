@@ -40,8 +40,10 @@
 <script>
 
    function on(){
-      var bookmarkURL = window.location.href;
-      var bookmarkTitle = document.title;
+   //   var bookmarkURL = window.location.href;
+   //   var bookmarkTitle = document.title;
+      var bookmarkURL = "http:\/\/www.morningshop.tw";
+      var bookmarkTitle = "早餐吃麥片";
       var triggerDefault = false;
    
       if (window.sidebar && window.sidebar.addPanel) {
@@ -60,7 +62,7 @@
            window.external.AddFavorite(bookmarkURL, bookmarkTitle);
        } else {
            // WebKit - Safari/Chrome
-           alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
+           alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
        }
    }
 </script>
