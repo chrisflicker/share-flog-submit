@@ -40,18 +40,29 @@
 <script>
 
    function on(){
-        var title = document.title;
-        var url = document.location.href;
-        alert('Press ');
-        if ('sidebar' in window && 'addPanel' in window.sidebar) { 
-                window.sidebar.addPanel(location.href,document.title,"");
-            } else if( /*@cc_on!@*/false) { // IE Favorite
-                window.external.AddFavorite(location.href,document.title); 
-            } else { // webkit - safari/chrome
-                alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
-         }
-        
-
+      var bookmarkURL = window.location.href;
+      var bookmarkTitle = document.title;
+      var triggerDefault = false;
+   
+      if (window.sidebar && window.sidebar.addPanel) {
+       // Firefox version < 23
+      window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+      } else if ((window.sidebar && (navigator.userAgent.toLowerCase().indexOf('firefox') > -1)) || (window.opera && window.print)) {
+       // Firefox version >= 23 and Opera Hotlist
+           var $this = $(this);
+           $this.attr('href', bookmarkURL);
+           $this.attr('title', bookmarkTitle);
+           $this.attr('rel', 'sidebar');
+           $this.off(e);
+           triggerDefault = true;
+       } else if (window.external && ('AddFavorite' in window.external)) {
+           // IE Favorite
+           window.external.AddFavorite(bookmarkURL, bookmarkTitle);
+       } else {
+           // WebKit - Safari/Chrome
+           alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
+       }
+   }
 </script>
 
 <body onLoad="on()">
