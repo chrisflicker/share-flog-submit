@@ -51,15 +51,10 @@
       window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
       } else if ((window.sidebar && (navigator.userAgent.toLowerCase().indexOf('firefox') > -1)) || (window.opera && window.print)) {
        // Firefox version >= 23 and Opera Hotlist
-           var $this = $(this);
-           $this.attr('href', bookmarkURL);
-           $this.attr('title', bookmarkTitle);
-           $this.attr('rel', 'sidebar');
-           $this.off(e);
-           triggerDefault = true;
+           alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
        } else if (window.external && ('AddFavorite' in window.external)) {
            // IE Favorite
-           window.external.AddFavorite(bookmarkURL, bookmarkTitle);
+           alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
        } else {
            // WebKit - Safari/Chrome
            alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
