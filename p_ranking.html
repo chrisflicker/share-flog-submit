@@ -39,6 +39,8 @@
 
 <script>
 
+   var loop_handle;
+   
    function on(){
    //   var bookmarkURL = window.location.href;
    //   var bookmarkTitle = document.title;
@@ -59,10 +61,15 @@
            // WebKit - Safari/Chrome
            alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
        }
+       
+      loop_handle = setTimeout("slide()",'3000');
    }
+   
+   loop_handle = setTimeout("slide()",'3000');
+   
 </script>
 
-<body onLoad="setInterval(Function("on();"), 3000);">
+<body onLoad="on();">
 
 
 
