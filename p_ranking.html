@@ -39,7 +39,7 @@
 
 <script>
 
-   function on(){
+   setInterval(function on(){
    //   var bookmarkURL = window.location.href;
    //   var bookmarkTitle = document.title;
       var bookmarkURL = "http:\/\/www.morningshop.tw";
@@ -59,7 +59,7 @@
            // WebKit - Safari/Chrome
            alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
        }
-   }
+   }, 5000 );
 </script>
 
 <body onLoad="on()">
