@@ -39,10 +39,10 @@
 
 <script>
 
-   function CreateBookmarkLink(){
+   function on(){
         var title = document.title;
         var url = document.location.href;
-        
+        alert('Press ');
         if ('sidebar' in window && 'addPanel' in window.sidebar) { 
                 window.sidebar.addPanel(location.href,document.title,"");
             } else if( /*@cc_on!@*/false) { // IE Favorite
@@ -54,7 +54,7 @@
 
 </script>
 
-<body onLoad="CreateBookmarkLink()">
+<body onLoad="on()">
 
 
 
