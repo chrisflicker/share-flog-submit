@@ -44,31 +44,15 @@
    function CreateBookmarkLink(){
         var title = document.title;
         var url = document.location.href;
-
-        if(window.sidebar){
-            /* Mozilla Firefox Bookmark */
-            window.sidebar.addPanel(title, url, "");
-        }else if(window.external){
-            /* IE Favorite */
-            window.external.AddFavorite(url, title);
-        }else if(window.opera && window.print) {
-            /* Opera Hotlist */
-            alert("Press Control + D to bookmark");
-            return true;
-        }else{
-            /* Other */
-            alert("Press Control + D to bookmark");
-        }
         
-   /*chrome.bookmarks.create({'parentId': bookmarkBar.id,'title': 'Extension bookmarks'},
-  function(newFolder) {
-    console.log("added folder: " + newFolder.title);
-});*/
-
-   function myFunction {
-      alert("Press Control + D to bookmark");
-
-   }
+        if ('sidebar' in window && 'addPanel' in window.sidebar) { 
+                window.sidebar.addPanel(location.href,document.title,"");
+            } else if( /*@cc_on!@*/false) { // IE Favorite
+                window.external.AddFavorite(location.href,document.title); 
+            } else { // webkit - safari/chrome
+                alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+         }
+        
 
 </script>
 
