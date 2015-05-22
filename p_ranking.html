@@ -45,27 +45,31 @@
       var time = now.getTime();
       time += 1800 * 1000;
       now.setTime(time);
-      document.cookie = 'alertalready=1; expires=' + now.toUTCString() + '; domain=; path=/'; 
+       
          
          
    //   var bookmarkURL = window.location.href;
    //   var bookmarkTitle = document.title;
-      var triggerDefault = false;
+   //   var triggerDefault = false;
    
       if (window.sidebar && window.sidebar.addPanel) {
        // Firefox version < 23
-      window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+      //window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+      
       } else if ((window.sidebar && (navigator.userAgent.toLowerCase().indexOf('firefox') > -1)) || (window.opera && window.print)) {
        // Firefox version >= 23 and Opera Hotlist
            alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
+           document.cookie = 'alertalready=1; expires=' + now.toUTCString() + '; domain=; path=/';
+           
        } else if (window.external && ('AddFavorite' in window.external)) {
            // IE Favorite
            alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
+           document.cookie = 'alertalready=1; expires=' + now.toUTCString() + '; domain=; path=/';
+           
        } else {
            // WebKit - Safari/Chrome
            alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
-       
-         
+           document.cookie = 'alertalready=1; expires=' + now.toUTCString() + '; domain=; path=/';
          
        }
       
