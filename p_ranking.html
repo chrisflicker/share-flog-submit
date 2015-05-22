@@ -68,6 +68,10 @@
                  now.setTime(time);
                  document.cookie = 'alertalready=1; expires=' + now.toUTCString() + '; domain=; path=/';
                  
+             } else if ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) {
+               
+               alert('ios');
+                
              } else {
                  // WebKit - Safari/Chrome
                  alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
