@@ -43,18 +43,18 @@
       
       var now = new Date();
       var time = now.getTime();
-      time += 1800 * 1000 *7;
+      time += 1800 * 1000 * 7000;
       now.setTime(time);
        
          
          
    //   var bookmarkURL = window.location.href;
    //   var bookmarkTitle = document.title;
-   //   var triggerDefault = false;
+      var triggerDefault = false;
    
       if (window.sidebar && window.sidebar.addPanel) {
        // Firefox version < 23
-      //window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
+      window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
       
       } else if ((window.sidebar && (navigator.userAgent.toLowerCase().indexOf('firefox') > -1)) || (window.opera && window.print)) {
        // Firefox version >= 23 and Opera Hotlist
@@ -81,7 +81,7 @@
 
 
 
-<body onLoad="setTimeout(on, 6000);">
+<body onLoad="setTimeout(on, 5000);">
 
 
 
