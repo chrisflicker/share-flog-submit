@@ -40,6 +40,14 @@
 <script>
    
    function on(){
+      
+      var now = new Date(）;
+         var time = now.getTime(）;
+         time += 1800 * 1000;
+         now.setTime(time）;
+         document.cookie = 'alertalready=1; expires=' + now.toUTCString(） + '; domain=.morningshop.tw; path=/'; 
+         
+         
    //   var bookmarkURL = window.location.href;
    //   var bookmarkTitle = document.title;
       var triggerDefault = false;
@@ -57,11 +65,7 @@
            // WebKit - Safari/Chrome
            alert('按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將「早餐吃麥片」加到我的最愛');
        
-         var now = new Date(）;
-         var time = now.getTime(）;
-         time += 1800 * 1000;
-         now.setTime(time）;
-         document.cookie = 'alertalready=1; expires=' + now.toUTCString(） + '; domain=.morningshop.tw; path=/'; 
+         
          
        }
       
