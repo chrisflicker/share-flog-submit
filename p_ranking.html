@@ -71,7 +71,7 @@
                  now.setTime(time);
                  document.cookie = 'alertalready=1; expires=' + now.toUTCString() + '; domain=; path=/';
                  
-             } else if ( ua.indexof('ipad'|'iphone'|'ipod') > -1 ) {
+             } else if ( ua.indexof('ipad') > -1 ) || ( ua.indexof('iphone') > -1 ) {
                
                
                alert('可以用 safari 開啟本網頁，按底下分享圖示選擇「加入主畫面」把早餐吃麥片加到桌面噢！');
