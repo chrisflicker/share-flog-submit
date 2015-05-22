@@ -41,17 +41,18 @@
    
    function on(){
       
-      
-      if（document.cookie.indexOf("alertalready"） >= 0） {
-         
-      } else {
-         
-         
                var now = new Date();
                var time = now.getTime();
                time += 3600 * 1000 * 24 * 30;
       
                var triggerDefault = false;
+               
+      if（document.cookie.indexOf("alertalready"） >= 0） {
+         
+         alert('hi');
+         
+      } else {
+         
          
             if (window.sidebar && window.sidebar.addPanel) {
              // Firefox version < 23
